@@ -13,6 +13,11 @@ public class TicketOffice {
         this.tickets.addAll(Arrays.asList(tickets));
     }
 
+    // 없던 Audience 의존이 생김
+    public void sellTicketTo(Audience audience){
+        plusAmount(audience.buy(getTicket()));
+    }
+
     public Ticket getTicket(){
         return tickets.remove(0);
     }
